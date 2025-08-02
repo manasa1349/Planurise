@@ -84,7 +84,7 @@
                 return;
             }
 
-            if (password.length <= 6) {
+            if (password.length < 6) {
                 document.getElementById("password_error").innerText = "Password must be at least 6 characters.";
                 return;
             }
