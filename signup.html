@@ -52,7 +52,7 @@
             <button onclick="save_the_signup_data()">Sign Up</button>
         </div>
 
-        <!-- <div class="other_login_options">
+        <div class="other_login_options">
             <p>have an account?<a href="login1.html">Sign in</a></p>
 
             <label>or else you can login with</label>
@@ -62,7 +62,7 @@
                 <a href="#"><img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"></a>
             </div>
 
-        </div> -->
+        </div>
     </div>
 
 
@@ -107,7 +107,7 @@
                 return;
             }
 
-            if (localStorage.getItem(username).length > 0) {
+            if (localStorage.getItem(username) !== null) {
                 document.getElementById("username_error").innerText = "Username not available"
                 return;
             }
@@ -117,18 +117,15 @@
                 return;
             }
             if (password !== conPassword) {
-                document.getElementById("password_error").innerText = "Incorrect password.";
+                document.getElementById("password_error").innerText = "passwords do not match.";
                 return;
             }
 
             localStorage.setItem(username, password);
             window.location.href = "login1.html";
+            alert("Successfully Registered!");
             console.log(localStorage);
         }
-
-
-    </script>
-
     </script>
 </body>
 
